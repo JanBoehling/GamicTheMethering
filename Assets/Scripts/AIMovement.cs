@@ -19,6 +19,7 @@ public class AIMovement : MonoBehaviour
 
     private void Update()
     {
+        agentZombie.SetDestination(player.position);
         timeToStop -= Time.deltaTime;
         
         Debug.Log(timeToStop);

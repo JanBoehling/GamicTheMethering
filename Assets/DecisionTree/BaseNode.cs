@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class BaseNode : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] float minJumpDistance;
+    [SerializeField] float distanceToPlayer;
+    [SerializeField] GameObject player;
+    [SerializeField] Jump doggoDoesJump;
+
+    private void Update()
     {
-        
+        CalculatePlayerDistance();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void CalculatePlayerDistance()
     {
-        
+        distanceToPlayer = Vector3.Distance(gameObject.transform.position, player.transform.position);
     }
+
+    private void doggoJump()
+    {
+        if (distanceToPlayer < minJumpDistance)
+        {
+            doggoDoesJump.DoggoJumpedLOL();
+        }
+    }
+
 }

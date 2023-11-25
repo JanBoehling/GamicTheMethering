@@ -26,7 +26,7 @@ public class AIMovement : MonoBehaviour
 
         if (timeToStop <= 3)
         {
-            Debug.Log("Time Reached Zero");
+            //Debug.Log("Time Reached Zero");
             StopMoving();
         }
     }
@@ -34,14 +34,13 @@ public class AIMovement : MonoBehaviour
     private void StopMoving()
     {
             agentZombie.isStopped = true;
-            Debug.Log("StayingStill:" + timeToStop);
+            //Debug.Log("StayingStill:" + timeToStop);
 
             if (timeToStop <= 0)
             {
-                Debug.Log("End freezing");
+                //Debug.Log("End freezing");
                 timeToStop = maxTimeInterval;
                 agentZombie.isStopped = false;
             }
-        
     }
 }

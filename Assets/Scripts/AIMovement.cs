@@ -22,7 +22,7 @@ public class AIMovement : MonoBehaviour
         agentZombie.SetDestination(player.position);
         timeToStop -= Time.deltaTime;
         
-        Debug.Log(timeToStop);
+        //Debug.Log(timeToStop);
 
         if (timeToStop <= 3)
         {

@@ -1,23 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Jump : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    float jumpHeight = 20;
+    private BaseNode baseNode;
+    float maxTimerInterval = 3f;
+
+    private void Update()
     {
-        
+        Debug.Log("Is called Update");
+    }
+    public Jump(BaseNode baseNode)
+    {
+        this.baseNode = baseNode;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DoggoJumpedLOL(Rigidbody dogRB, float distanceToPlayer, float timer)
     {
-        
-    }
-
-    public void DoggoJumpedLOL()
-    {
-
+        Debug.Log("Dog Jumped");
+        dogRB.AddRelativeForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
     }
 }

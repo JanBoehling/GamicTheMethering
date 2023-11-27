@@ -14,8 +14,18 @@ public class LevelManager : MonoBehaviour
         // GetComponents
         wave = GetComponent<Wave>();
 
-        // Erste Welle starten 
-        StartWave(levelSettings.StartWave);
+        // Prozentwerte der Monsterverteilung prüfen
+        if ((levelSettings.Enemy1PercentageD1 + levelSettings.Enemy2PercentageD1 + levelSettings.Enemy3PercentageD1) == 100
+        && (levelSettings.Enemy1PercentageD2 + levelSettings.Enemy2PercentageD2 + levelSettings.Enemy3PercentageD2) == 100
+        && (levelSettings.Enemy1PercentageD3 + levelSettings.Enemy2PercentageD3 + levelSettings.Enemy3PercentageD3) == 100)
+        {
+            // Erste Welle starten 
+            StartWave(levelSettings.StartWave);
+        }
+        else
+        {
+            Debug.LogWarning("The monster distribution is invalid. All wave ranges must reach 100%. These settings can be changed in the level settings.");
+        }
     }
     #endregion
 

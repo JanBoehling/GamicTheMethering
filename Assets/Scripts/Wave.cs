@@ -14,6 +14,11 @@ public class Wave : MonoBehaviour
     [SerializeField] private Spawner testEnemy2;          // Verknüpfung zu einem Gegner
     [SerializeField] private Spawner testEnemy3;          // Verknüpfung zu einem Gegner
 
+    [Header("Boss")]
+    [SerializeField] private Spawner boss1;               // Verknüpfung zum ersten Boss
+    [SerializeField] private Spawner boss2;               // Verknüpfung zum ersten Boss
+    [SerializeField] private Spawner boss3;               // Verknüpfung zum ersten Boss
+
     [Header("Other")]
     private int waveNumber;                               // Anzahl der Welle 
     private float numberOfObjectsToSpawn;                 // Anzahl an Gegners
@@ -44,20 +49,85 @@ public class Wave : MonoBehaviour
         if (waveNumber <= 5) 
         {
             // Abrufen der Prozentwerte aus dem LevelSettings
-            enemy1Count = Mathf.RoundToInt(levelSettings.Enemy1PercentageD1 * 0.01f * numberOfObjectsToSpawn);
-            enemy2Count = Mathf.RoundToInt(levelSettings.Enemy2PercentageD1 * 0.01f * numberOfObjectsToSpawn);
-            enemy3Count = Mathf.RoundToInt(levelSettings.Enemy3PercentageD1 * 0.01f * numberOfObjectsToSpawn);
+
+            // Boss Welle mit Gegnern 
+            if (waveNumber == 5 && levelSettings.SpawnNormalEnemiesAtBossWave)
+            {
+                enemy1Count = Mathf.RoundToInt(levelSettings.Enemy1PercentageD1 * 0.01f * numberOfObjectsToSpawn);
+                enemy2Count = Mathf.RoundToInt(levelSettings.Enemy2PercentageD1 * 0.01f * numberOfObjectsToSpawn);
+                enemy3Count = Mathf.RoundToInt(levelSettings.Enemy3PercentageD1 * 0.01f * numberOfObjectsToSpawn);
+            }
+            // Boss Welle ohne Gegner
+            else if (waveNumber == 5 && !levelSettings.SpawnNormalEnemiesAtBossWave)
+            {
+                enemy1Count = 0; 
+                enemy2Count = 0;
+                enemy3Count = 0;
+            }
+            // Normale Welle 
+            else
+            {
+                enemy1Count = Mathf.RoundToInt(levelSettings.Enemy1PercentageD1 * 0.01f * numberOfObjectsToSpawn);
+                enemy2Count = Mathf.RoundToInt(levelSettings.Enemy2PercentageD1 * 0.01f * numberOfObjectsToSpawn);
+                enemy3Count = Mathf.RoundToInt(levelSettings.Enemy3PercentageD1 * 0.01f * numberOfObjectsToSpawn);
+            }
         }
         // Welle 6-10
         else if (waveNumber <= 10)
         {
             // Abrufen der Prozentwerte aus dem LevelSettings
-            enemy1Count = Mathf.RoundToInt(levelSettings.Enemy1PercentageD2 * 0.01f * numberOfObjectsToSpawn);
-            enemy2Count = Mathf.RoundToInt(levelSettings.Enemy2PercentageD2 * 0.01f * numberOfObjectsToSpawn);
-            enemy3Count = Mathf.RoundToInt(levelSettings.Enemy3PercentageD2 * 0.01f * numberOfObjectsToSpawn);
+
+            // Boss Welle mit Gegnern 
+            if (waveNumber == 10 && levelSettings.SpawnNormalEnemiesAtBossWave)
+            {
+                enemy1Count = Mathf.RoundToInt(levelSettings.Enemy1PercentageD2 * 0.01f * numberOfObjectsToSpawn);
+                enemy2Count = Mathf.RoundToInt(levelSettings.Enemy2PercentageD2 * 0.01f * numberOfObjectsToSpawn);
+                enemy3Count = Mathf.RoundToInt(levelSettings.Enemy3PercentageD2 * 0.01f * numberOfObjectsToSpawn);
+            }
+            // Boss Welle ohne Gegner
+            else if (waveNumber == 10 && !levelSettings.SpawnNormalEnemiesAtBossWave)
+            {
+                enemy1Count = 0;
+                enemy2Count = 0;
+                enemy3Count = 0;
+            }
+            // Normale Welle 
+            else
+            {
+                enemy1Count = Mathf.RoundToInt(levelSettings.Enemy1PercentageD2 * 0.01f * numberOfObjectsToSpawn);
+                enemy2Count = Mathf.RoundToInt(levelSettings.Enemy2PercentageD2 * 0.01f * numberOfObjectsToSpawn);
+                enemy3Count = Mathf.RoundToInt(levelSettings.Enemy3PercentageD2 * 0.01f * numberOfObjectsToSpawn);
+            }
         }
-        // Welle 11-X
-        else if (waveNumber > 10)
+        // Welle 11-15
+        else if (waveNumber <= 15)
+        {
+            // Abrufen der Prozentwerte aus dem LevelSettings
+
+            // Boss Welle mit Gegnern 
+            if (waveNumber == 15 && levelSettings.SpawnNormalEnemiesAtBossWave)
+            {
+                enemy1Count = Mathf.RoundToInt(levelSettings.Enemy1PercentageD3 * 0.01f * numberOfObjectsToSpawn);
+                enemy2Count = Mathf.RoundToInt(levelSettings.Enemy2PercentageD3 * 0.01f * numberOfObjectsToSpawn);
+                enemy3Count = Mathf.RoundToInt(levelSettings.Enemy3PercentageD3 * 0.01f * numberOfObjectsToSpawn);
+            }
+            // Boss Welle ohne Gegner
+            else if (waveNumber == 15 && !levelSettings.SpawnNormalEnemiesAtBossWave)
+            {
+                enemy1Count = 0;
+                enemy2Count = 0;
+                enemy3Count = 0;
+            }
+            // Normale Welle 
+            else
+            {
+                enemy1Count = Mathf.RoundToInt(levelSettings.Enemy1PercentageD3 * 0.01f * numberOfObjectsToSpawn);
+                enemy2Count = Mathf.RoundToInt(levelSettings.Enemy2PercentageD3 * 0.01f * numberOfObjectsToSpawn);
+                enemy3Count = Mathf.RoundToInt(levelSettings.Enemy3PercentageD3 * 0.01f * numberOfObjectsToSpawn);
+            }
+        }
+        // Welle 15-X
+        else if (waveNumber > 15)
         {
             // Abrufen der Prozentwerte aus dem LevelSettings
             enemy1Count = Mathf.RoundToInt(levelSettings.Enemy1PercentageD3 * 0.01f * numberOfObjectsToSpawn);
@@ -86,6 +156,12 @@ public class Wave : MonoBehaviour
         testEnemy1.Spawn(distribution[0]);
         testEnemy2.Spawn(distribution[1]);
         testEnemy3.Spawn(distribution[2]);
+
+        // Boss erzeugen 
+        if (waveNumber == 5) { boss1.Spawn(1); }
+        if (waveNumber == 10) { boss2.Spawn(1); }
+        if (waveNumber == 15) { boss3.Spawn(1); }
+
     }
     #endregion
 }

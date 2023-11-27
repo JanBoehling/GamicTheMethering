@@ -7,10 +7,16 @@ using UnityEngine;
 public class LevelSettings : ScriptableObject
 {
     [Header("DEBUG")]
-    [SerializeField] private int startWave = 1; 
+    [SerializeField, Tooltip("Der Wert bestimmt, ab welcher Welle das Spiel starten soll.")]
+    private int startWave = 1;
 
     [Header("Settings")]
-    [SerializeField] private float enemyWavesMultiplier = 1.2f;
+    [SerializeField, Tooltip("Der Wert dient als Multiplikator, der die Anzahl an Gegnern pro Welle bestimmt. Die Formel lautet: WaveNumber * EnemyWavesMultiplier.")]
+    private float enemyWavesMultiplier = 1.2f;
+    [SerializeField, Tooltip("Der Wert bestimmt, ob bei einer Boss-Welle zusätzlich zum Boss, normale Gegner erscheinen sollen.")]
+    private bool spawnNormalEnemiesAtBossWave = true;
+    [SerializeField, Tooltip("Der Wert bestimmt, ob das Spiel nach Welle 15 weiter fortgesetzt wird. ")]
+    private bool stopAfterWave15 = true;
 
     [Header("Enemy Distribution Percentages (W 1-5)")]
     [SerializeField, Range(0, 100)] private int enemy1PercentageD1 = 100;
@@ -30,6 +36,9 @@ public class LevelSettings : ScriptableObject
     #region Getter / Setter
     public int StartWave { get { return startWave; } }
     public float EnemyWavesMultiplier { get { return enemyWavesMultiplier; } }
+    public bool SpawnNormalEnemiesAtBossWave { get { return spawnNormalEnemiesAtBossWave; } }
+    public bool StopAfterWave15 { get { return stopAfterWave15; } }
+
 
     #region Enemy Distribution Percentages
     public int Enemy1PercentageD1 { get { return enemy1PercentageD1; } }

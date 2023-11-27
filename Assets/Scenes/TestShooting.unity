@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 53702901}
   - component: {fileID: 53702900}
   - component: {fileID: 53702902}
+  - component: {fileID: 53702903}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -308,6 +309,22 @@ MonoBehaviour:
   weapons: []
   zoomFOV: 30
   zoomSpeed: 100
+--- !u!114 &53702903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53702895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 702e7bb2913479340883192650235a42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectorPrefab: {fileID: 0}
+  detectorCount: 6
+  viewDistance: 10
+  fov: 60
 --- !u!1 &151460355
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,7 +938,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1484748119}
   - component: {fileID: 1484748122}
-  - component: {fileID: 1484748121}
   - component: {fileID: 1484748120}
   m_Layer: 0
   m_Name: WeaponRenderer
@@ -990,14 +1006,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!81 &1484748121
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1484748118}
-  m_Enabled: 1
 --- !u!20 &1484748122
 Camera:
   m_ObjectHideFlags: 0

@@ -13,31 +13,63 @@ public class BaseNode : MonoBehaviour
     [SerializeField] float minJumpDistance;
     [SerializeField] float maxJumpDistance;
     Jump doggoDoesJump;
+    Run doggoDoesRun;
     bool groundCheck = false;
     float distanceToPlayer;
     float timer;
+    bool stopRunning = false;
+    bool timerFinished = false;
+
+    private void Start()
+    {
+        doggoDoesRun = new Run(this);
+        doggoDoesJump = new Jump(this);
+    }
 
     private void Update()
     {
-        doggoDoesJump = new Jump(this);
+        timer -= Time.deltaTime;
         CalculatePlayerDistance();
+        DoggoIsOnTheMove();
         doggoJump();
+        
     }
 
     private void CalculatePlayerDistance()
     {
-        Debug.Log("Doggo Move");
         distanceToPlayer = Vector3.Distance(gameObject.transform.position, player.transform.position);
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+    }
+
+    private void DoggoIsOnTheMove()
+    {
+        if (stopRunning == false)
+        {
+            Debug.Log("Doggo Move");
+            doggoDoesRun.DoggoMove(distanceToPlayer, player, doggoPosition, speed, timer);
+        }
+
     }
 
     private void doggoJump()
     {
-        Debug.Log("Cool Jump from Doggo");
-        if (distanceToPlayer > minJumpDistance && distanceToPlayer < maxJumpDistance && groundCheck == true)
+        if (distanceToPlayer > minJumpDistance && distanceToPlayer <= maxJumpDistance && groundCheck == true)
         {
-            doggoDoesJump.DoggoJumpedLOL(rbDog, distanceToPlayer, timer);
-            groundCheck = false;
+            stopRunning = true;
+            if (timerFinished == false)
+            {
+                Debug.Log("Timer is Set");
+                timer = 3f;
+                timerFinished = true;
+            }
+
+            if (timer <= 0)
+            {
+                Debug.Log("Cool Jump from Doggo");
+                doggoDoesJump.DoggoJumpedLOL(rbDog, distanceToPlayer, timer);
+                stopRunning = false;
+                groundCheck = false;
+                timerFinished = false;
+            }
         }
     }
 

@@ -9,6 +9,10 @@ public class Jump : MonoBehaviour
     private BaseNode baseNode;
     float maxTimerInterval = 3f;
 
+    private void Update()
+    {
+        Debug.Log("Is called Update");
+    }
     public Jump(BaseNode baseNode)
     {
         this.baseNode = baseNode;

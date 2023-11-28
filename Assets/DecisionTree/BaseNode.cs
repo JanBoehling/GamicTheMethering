@@ -14,16 +14,19 @@ public class BaseNode : MonoBehaviour
     [SerializeField] float maxJumpDistance;
     Jump doggoDoesJump;
     Run doggoDoesRun;
-    bool groundCheck = false;
     float distanceToPlayer;
     float timer;
+    float doggoBaseSpeed;
     bool stopRunning = false;
     bool timerFinished = false;
+    bool hasJumped = false;
+    bool groundCheck = false;
 
     private void Start()
     {
         doggoDoesRun = new Run(this);
         doggoDoesJump = new Jump(this);
+        doggoBaseSpeed = speed;
     }
 
     private void Update()
@@ -65,6 +68,7 @@ public class BaseNode : MonoBehaviour
             if (timer <= 0)
             {
                 Debug.Log("Cool Jump from Doggo");
+                speed += 100f;
                 doggoDoesJump.DoggoJumpedLOL(rbDog, distanceToPlayer, timer);
                 stopRunning = false;
                 groundCheck = false;
@@ -78,6 +82,7 @@ public class BaseNode : MonoBehaviour
         if (collision.collider.CompareTag("Ground"))
         {
             groundCheck = true;
+            speed = doggoBaseSpeed;
         }
     }
 

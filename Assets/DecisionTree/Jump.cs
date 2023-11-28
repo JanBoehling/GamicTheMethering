@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Jump : MonoBehaviour
 {
-    float jumpHeight = 20f;
+    float jumpHeight = 50f;
     float jumpForward = 10f;
     private BaseNode baseNode;
     float maxTimerInterval = 3f;

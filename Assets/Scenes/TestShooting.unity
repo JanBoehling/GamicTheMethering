@@ -308,7 +308,6 @@ MonoBehaviour:
   aimKey: 324
   weapons:
   - {fileID: 11400000, guid: 3b6fc3216ea1e8646951070985ff529c, type: 2}
-  - {fileID: 11400000, guid: 368f74e34f30f4048a147492e2676dc7, type: 2}
   zoomFOV: 30
   zoomSpeed: 100
   currentWeaponIndex: 0

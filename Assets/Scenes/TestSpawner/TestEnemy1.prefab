@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2752691273260896844}
   - component: {fileID: 5127332973333379347}
   - component: {fileID: 5951067794302243404}
+  - component: {fileID: -561030704594457061}
+  - component: {fileID: -7789454265913233944}
   m_Layer: 0
   m_Name: TestEnemy1
   m_TagString: Untagged
@@ -108,6 +110,42 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-561030704594457061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4327940315809100504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 116b0722ee61b9e4a9a8d8e0c6eaa31a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentZombie: {fileID: -7789454265913233944}
+  player: {fileID: 2457113468777286812, guid: e79585b6bb99d5843b763b18fcc08f9d, type: 3}
+--- !u!195 &-7789454265913233944
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4327940315809100504}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &9215919563499165949
 GameObject:
   m_ObjectHideFlags: 0

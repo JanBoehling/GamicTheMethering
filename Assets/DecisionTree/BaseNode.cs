@@ -70,7 +70,7 @@ public class BaseNode : MonoBehaviour
             if (timer <= 0)
             {
                 Debug.Log("Cool Jump from Doggo");
-                speed += 100f;
+                speed += 80f;
                 doggoDoesJump.DoggoJumpedLOL(rbDog, distanceToPlayer, timer);
                 stopRunning = false;
                 groundCheck = false;
@@ -82,8 +82,7 @@ public class BaseNode : MonoBehaviour
     private void RotateTowards()
     {
         var lookRotation = Quaternion.LookRotation(player.transform.position - doggoPosition.transform.position);
-        var QuaternionStuff = Quaternion.Slerp(doggoPosition.transform.rotation, lookRotation, Time.deltaTime * directionSpeed);
-        Quaternion.Euler
+        transform.rotation = Quaternion.Slerp(doggoPosition.transform.rotation, lookRotation, Time.deltaTime * directionSpeed);
     }
 
     private void OnCollisionEnter(Collision collision)

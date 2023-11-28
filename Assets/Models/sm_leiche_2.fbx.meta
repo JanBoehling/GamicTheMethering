@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 660222c2c5997d849874f04031364192
+guid: db8225e216a31e64589cb9fd9af7578a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rig_leiche_main_character_final_male_zbrush_default
+    second: {fileID: 2100000, guid: d737b1825c607424694c6a0378266410, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

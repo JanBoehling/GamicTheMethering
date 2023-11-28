@@ -153,14 +153,14 @@ public class Wave : MonoBehaviour
         int[] distribution = SpawnDistribution();
 
         // Monster erzeugen 
-        testEnemy1.Spawn(distribution[0]);
-        testEnemy2.Spawn(distribution[1]);
-        testEnemy3.Spawn(distribution[2]);
+        testEnemy1.Spawn(distribution[0], levelSettings.TimeBetweenSpawns);
+        testEnemy2.Spawn(distribution[1], levelSettings.TimeBetweenSpawns);
+        testEnemy3.Spawn(distribution[2], levelSettings.TimeBetweenSpawns);
 
         // Boss erzeugen 
-        if (waveNumber == 5) { boss1.Spawn(1); }
-        if (waveNumber == 10) { boss2.Spawn(1); }
-        if (waveNumber == 15) { boss3.Spawn(1); }
+        if (waveNumber == 5) { boss1.Spawn(1, levelSettings.TimeBetweenSpawns); }
+        if (waveNumber == 10) { boss2.Spawn(1, levelSettings.TimeBetweenSpawns); }
+        if (waveNumber == 15) { boss3.Spawn(1, levelSettings.TimeBetweenSpawns); }
 
     }
     #endregion

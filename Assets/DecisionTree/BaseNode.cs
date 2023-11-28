@@ -12,18 +12,22 @@ public class BaseNode : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float minJumpDistance;
     [SerializeField] float maxJumpDistance;
+    [SerializeField] float directionSpeed;
     Jump doggoDoesJump;
     Run doggoDoesRun;
-    bool groundCheck = false;
     float distanceToPlayer;
     float timer;
+    float doggoBaseSpeed;
     bool stopRunning = false;
     bool timerFinished = false;
+    bool hasJumped = false;
+    bool groundCheck = false;
 
     private void Start()
     {
         doggoDoesRun = new Run(this);
         doggoDoesJump = new Jump(this);
+        doggoBaseSpeed = speed;
     }
 
     private void Update()
@@ -32,6 +36,7 @@ public class BaseNode : MonoBehaviour
         CalculatePlayerDistance();
         DoggoIsOnTheMove();
         doggoJump();
+        RotateTowards();
         
     }
 
@@ -65,6 +70,7 @@ public class BaseNode : MonoBehaviour
             if (timer <= 0)
             {
                 Debug.Log("Cool Jump from Doggo");
+                speed += 100f;
                 doggoDoesJump.DoggoJumpedLOL(rbDog, distanceToPlayer, timer);
                 stopRunning = false;
                 groundCheck = false;
@@ -73,11 +79,19 @@ public class BaseNode : MonoBehaviour
         }
     }
 
+    private void RotateTowards()
+    {
+        var lookRotation = Quaternion.LookRotation(player.transform.position - doggoPosition.transform.position);
+        var QuaternionStuff = Quaternion.Slerp(doggoPosition.transform.rotation, lookRotation, Time.deltaTime * directionSpeed);
+        Quaternion.Euler
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Ground"))
         {
             groundCheck = true;
+            speed = doggoBaseSpeed;
         }
     }
 

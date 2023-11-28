@@ -13,6 +13,8 @@ public class LevelSettings : ScriptableObject
     [Header("Settings")]
     [SerializeField, Tooltip("Der Wert dient als Multiplikator, der die Anzahl an Gegnern pro Welle bestimmt. Die Formel lautet: WaveNumber * EnemyWavesMultiplier.")]
     private float enemyWavesMultiplier = 1.2f;
+    [SerializeField, Range(0, 20), Tooltip("Der Wert gibt an, wie viele Sekunden zwischen den spawns gewartet werden soll.")]
+    private int timeBetweenSpawns = 3; 
     [SerializeField, Tooltip("Der Wert bestimmt, ob bei einer Boss-Welle zusätzlich zum Boss, normale Gegner erscheinen sollen.")]
     private bool spawnNormalEnemiesAtBossWave = true;
     [SerializeField, Tooltip("Der Wert bestimmt, ob das Spiel nach Welle 15 weiter fortgesetzt wird. ")]
@@ -36,6 +38,7 @@ public class LevelSettings : ScriptableObject
     #region Getter / Setter
     public int StartWave { get { return startWave; } }
     public float EnemyWavesMultiplier { get { return enemyWavesMultiplier; } }
+    public int TimeBetweenSpawns { get { return timeBetweenSpawns; } }
     public bool SpawnNormalEnemiesAtBossWave { get { return spawnNormalEnemiesAtBossWave; } }
     public bool StopAfterWave15 { get { return stopAfterWave15; } }
 

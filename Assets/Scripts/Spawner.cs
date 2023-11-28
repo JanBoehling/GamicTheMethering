@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -28,15 +29,28 @@ public class Spawner : MonoBehaviour
     /// Führt eine Schleife aus, die mithilfe der "SpawnObjectAtRandom" Methode Objekte erzeugt.
     /// </summary>
     /// <param name="amountOfSpawns">Anzahl an Objekten, die erzeugt werden sollen</param>
-    public void Spawn(int amountOfSpawns)
+    /// <param name="timeBetweenSpawns">Sekunden, die zwischen den spawns gewartet werden soll</param>
+    public void Spawn(int amountOfSpawns, int timeBetweenSpawns)
+    {
+        StartCoroutine(SpawnCoroutine(amountOfSpawns, timeBetweenSpawns));
+    }
+
+    /// <summary>
+    /// Führt eine Schleife aus, die mithilfe der "SpawnObjectAtRandom" Methode Objekte erzeugt.
+    /// </summary>
+    /// <param name="amountOfSpawns">Anzahl an Objekten, die erzeugt werden sollen</param>
+    /// <param name="timeBetweenSpawns">Sekunden, die zwischen den spawns gewartet werden soll</param>
+    /// <returns></returns>
+    private IEnumerator SpawnCoroutine(int amountOfSpawns, int timeBetweenSpawns)
     {
         // Die Schleife führt die Spawn Methode je nach Menge der zu erzeugen Objekten aus.
         for (int i = 0; i < amountOfSpawns; i++)
         {
             SpawnObjectAtRandom(SpawnObject, SpawnArea);
+            yield return new WaitForSeconds(timeBetweenSpawns);
         }
 
-        // Sobald mindestens ein Objekt nicht erzeugt werden konnte, wird dies hier ausgeben. 
+        // Sobald mindestens ein Objekt nicht erzeugt werden konnte, wird folgendes ausgeben. 
 #if UNITY_EDITOR
         if (missingObjects > 0)
         {
@@ -131,6 +145,16 @@ public class Spawner : MonoBehaviour
                  UnityEngine.Random.Range(spawnArea.bounds.min.y, spawnArea.bounds.max.y),
                  UnityEngine.Random.Range(spawnArea.bounds.min.z, spawnArea.bounds.max.z));
         }
+    }
+
+    /// <summary>
+    /// Wartet X sekunden bis zum nächsten Befehl. 
+    /// </summary>
+    /// <param name="seconds">Sekunden die gewartet werden sollen</param>
+    /// <returns></returns>
+    private IEnumerator WaitforSeconds(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
     }
     #endregion
 }

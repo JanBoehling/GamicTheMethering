@@ -81,10 +81,9 @@ public class BaseNode : MonoBehaviour
 
     private void RotateTowards()
     {
-        float singleStep = directionSpeed *Time.deltaTime;
-        Vector3 newDirection = Vector3.RotateTowards(transform.forward, player.transform.position, singleStep, 0.0f);
-        transform.rotation = Quaternion.LookRotation(newDirection);
-        
+        var lookRotation = Quaternion.LookRotation(player.transform.position - doggoPosition.transform.position);
+        var QuaternionStuff = Quaternion.Slerp(doggoPosition.transform.rotation, lookRotation, Time.deltaTime * directionSpeed);
+        Quaternion.Euler
     }
 
     private void OnCollisionEnter(Collision collision)

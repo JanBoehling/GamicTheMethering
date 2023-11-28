@@ -18,12 +18,13 @@ public class PlayerShootController : MonoBehaviour
 
     private Coroutine equipWeaponCO;
 
-    private int currentWeaponIndex;
+    [SerializeField] private int currentWeaponIndex;
     private int CurrentWeaponIndex
     {
         get => currentWeaponIndex;
         set
         {
+            Debug.Log(value);
             if (currentWeaponIndex == value) return;
             currentWeaponIndex = weapons.Count < value ? value : 0;
             if (equipWeaponCO != null) StopCoroutine(equipWeaponCO);
@@ -40,35 +41,34 @@ public class PlayerShootController : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetKeyDown(shootKey) && gun != null) gun.Shoot();
+        if (Input.GetKeyDown(shootKey) && weapons[currentWeaponIndex] != null) weapons[currentWeaponIndex].Shoot();
 
-        if (Input.GetKey(aimKey))
-        {
-            // Zoom in camera
-            if (cam.fieldOfView > zoomFOV) cam.fieldOfView -= Time.deltaTime * zoomSpeed;
-            else cam.fieldOfView = zoomFOV;
-
-            // Zoom in weapon renderer
-            if (weaponRenderer.fieldOfView > zoomFOV + (baseFOV - zoomFOV) * .5f) weaponRenderer.fieldOfView -= Time.deltaTime * zoomSpeed * .5f;
-            else weaponRenderer.fieldOfView = zoomFOV + (baseFOV - zoomFOV) * .5f;
-        }
-        else
-        {
-            // Zoom out camera
-            if (cam.fieldOfView < baseFOV) cam.fieldOfView += Time.deltaTime * zoomSpeed;
-            else cam.fieldOfView = baseFOV;
-
-            // Zoom out weapon renderer
-            if (weaponRenderer.fieldOfView < baseFOV) weaponRenderer.fieldOfView += Time.deltaTime * zoomSpeed * .5f;
-            else weaponRenderer.fieldOfView = baseFOV;
-        }
+        if (Input.GetKey(aimKey)) ZoomIn();
+        else ZoomOut();
 
         CurrentWeaponIndex += (int)Input.mouseScrollDelta.y;
     }
 
-    private IEnumerator ZoomCam()
+    private void ZoomIn()
     {
-        yield break;
+        // Zoom in camera
+        if (cam.fieldOfView > zoomFOV) cam.fieldOfView -= Time.deltaTime * zoomSpeed;
+        else cam.fieldOfView = zoomFOV;
+
+        // Zoom in weapon renderer
+        if (weaponRenderer.fieldOfView > zoomFOV + (baseFOV - zoomFOV) * .5f) weaponRenderer.fieldOfView -= Time.deltaTime * zoomSpeed * .5f;
+        else weaponRenderer.fieldOfView = zoomFOV + (baseFOV - zoomFOV) * .5f;
+    }
+
+    private void ZoomOut()
+    {
+        // Zoom out camera
+        if (cam.fieldOfView < baseFOV) cam.fieldOfView += Time.deltaTime * zoomSpeed;
+        else cam.fieldOfView = baseFOV;
+
+        // Zoom out weapon renderer
+        if (weaponRenderer.fieldOfView < baseFOV) weaponRenderer.fieldOfView += Time.deltaTime * zoomSpeed * .5f;
+        else weaponRenderer.fieldOfView = baseFOV;
     }
 
     private IEnumerator EquipWeaponCO()

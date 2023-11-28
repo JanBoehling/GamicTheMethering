@@ -10,6 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1592941c209dddf42a689033bd625079, type: 3}
-  m_Name: Default
+  m_Name: Ambient
   m_EditorClassIdentifier: 
-  Set: []
+  Set:
+  - {fileID: 8300000, guid: bf73c7c355fba9646a63c3e4ac87bb42, type: 3}
+  - {fileID: 8300000, guid: 1f40125a3d808304f9af7858611c6ad2, type: 3}

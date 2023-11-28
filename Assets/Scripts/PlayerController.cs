@@ -157,7 +157,7 @@ public class PlayerController : MonoBehaviour
     /// <typeparam name="T">The component to check for</typeparam>
     /// <param name="distance">The distance how long the ray should be shot</param>
     /// <returns>Information about the first hit object and the component that was testet for. Returns null, if nothing was found.</returns>
-    private (RaycastHit hit, T target)? LookAt<T>(float distance)
+    private (RaycastHit hit, T target)? LookAt<T>(float distance) where T : MonoBehaviour
     {
         var ray = cam.ScreenPointToRay(Input.mousePosition);
         var hit = new RaycastHit[1];

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 12Gauge
   m_EditorClassIdentifier: 
   BulletCount: 12
-  DamagePerBullet: 0
-  BulletDeviation: 0
+  DamagePerBullet: 1
+  BulletDeviation: 1

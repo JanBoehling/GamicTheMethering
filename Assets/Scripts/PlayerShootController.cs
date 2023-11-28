@@ -46,7 +46,7 @@ public class PlayerShootController : MonoBehaviour
         if (Input.GetKey(aimKey)) ZoomIn();
         else ZoomOut();
 
-        CurrentWeaponIndex += (int)Input.mouseScrollDelta.y;
+        //CurrentWeaponIndex += (int)Input.mouseScrollDelta.y;
     }
 
     private void ZoomIn()
@@ -73,7 +73,7 @@ public class PlayerShootController : MonoBehaviour
 
     private IEnumerator EquipWeaponCO()
     {
-        if (CurrentWeaponIndex >= weapons.Count) yield break;
+        if (CurrentWeaponIndex >= weapons.Count) yield return null;
 
         yield return new WaitForSeconds(1f);
 

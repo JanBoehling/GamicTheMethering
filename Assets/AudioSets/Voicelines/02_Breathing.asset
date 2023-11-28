@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1592941c209dddf42a689033bd625079, type: 3}
+  m_Name: 02_Breathing
+  m_EditorClassIdentifier: 
+  Set:
+  - {fileID: 8300000, guid: 79f3f8e9c93575642b15dac00764c6ae, type: 3}
+  - {fileID: 8300000, guid: 561f0039f3982ea46a556a333ec30ba5, type: 3}
+  - {fileID: 8300000, guid: 5e0bd9cdd810c1a4181c13775d2c4572, type: 3}
+  - {fileID: 8300000, guid: 5bdf41eb588c24649a5b5287560db94c, type: 3}
+  - {fileID: 8300000, guid: 01581b5e5519d374b9455d4d12c9baf4, type: 3}
+  - {fileID: 8300000, guid: c4c1849bcc2fab3498f039b486d493fd, type: 3}
+  - {fileID: 8300000, guid: dcdc7a4bdc260e44d847e4e91c907961, type: 3}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1592941c209dddf42a689033bd625079, type: 3}
+  m_Name: EerieSoundsMetal
+  m_EditorClassIdentifier: 
+  Set:
+  - {fileID: 8300000, guid: 5ef4d3c98993d3849bf9c7a3daf107c2, type: 3}
+  - {fileID: 8300000, guid: 19adeec835c676f4e962c6e028a0570d, type: 3}
+  - {fileID: 8300000, guid: c89815120149dc34aba70b94677ba189, type: 3}
+  - {fileID: 8300000, guid: 9539690d74cb89c4bb180ca29074f097, type: 3}
+  - {fileID: 8300000, guid: ded3d26bc1b6d07479e54b50aaba3dbb, type: 3}
+  - {fileID: 8300000, guid: 874788f1a9b11ad4695eafab6c797e32, type: 3}
+  - {fileID: 8300000, guid: dadfb25a6d43cd64ab33403963ca4988, type: 3}

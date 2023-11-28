@@ -12,6 +12,7 @@ public class BaseNode : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float minJumpDistance;
     [SerializeField] float maxJumpDistance;
+    [SerializeField] float directionSpeed;
     Jump doggoDoesJump;
     Run doggoDoesRun;
     float distanceToPlayer;
@@ -35,6 +36,7 @@ public class BaseNode : MonoBehaviour
         CalculatePlayerDistance();
         DoggoIsOnTheMove();
         doggoJump();
+        RotateTowards();
         
     }
 
@@ -75,6 +77,14 @@ public class BaseNode : MonoBehaviour
                 timerFinished = false;
             }
         }
+    }
+
+    private void RotateTowards()
+    {
+        float singleStep = directionSpeed *Time.deltaTime;
+        Vector3 newDirection = Vector3.RotateTowards(transform.forward, player.transform.position, singleStep, 0.0f);
+        transform.rotation = Quaternion.LookRotation(newDirection);
+        
     }
 
     private void OnCollisionEnter(Collision collision)

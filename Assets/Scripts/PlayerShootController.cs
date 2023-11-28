@@ -41,12 +41,29 @@ public class PlayerShootController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(shootKey) && weapons[currentWeaponIndex] != null) weapons[currentWeaponIndex].Shoot();
+        if (Input.GetKeyDown(shootKey) && weapons[currentWeaponIndex] != null)
+        {
+            for (int i = 0; i < weapons[currentWeaponIndex].BulletAnchor.GetChild(0).childCount; i++)
+            {
+                weapons[currentWeaponIndex].BulletAnchor.GetChild(0).GetChild(i).GetComponent<MeshRenderer>().enabled = true;
+            }
+            weapons[currentWeaponIndex].Shoot();
+            StartCoroutine(DisableMuzzleFlash());
+        }
 
         if (Input.GetKey(aimKey)) ZoomIn();
         else ZoomOut();
 
         //CurrentWeaponIndex += (int)Input.mouseScrollDelta.y;
+    }
+
+    public IEnumerator DisableMuzzleFlash()
+    {
+        yield return new WaitForSeconds(.25f);
+        for (int i = 0; i < weapons[currentWeaponIndex].BulletAnchor.GetChild(0).childCount; i++)
+        {
+            weapons[currentWeaponIndex].BulletAnchor.GetChild(0).GetChild(i).GetComponent<MeshRenderer>().enabled = false;
+        }
     }
 
     private void ZoomIn()

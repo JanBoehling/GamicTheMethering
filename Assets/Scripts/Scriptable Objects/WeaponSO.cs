@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "ScriptableObjects/Weapon")]
@@ -7,18 +9,23 @@ public class WeaponSO : ScriptableObject
     public float Range;
 
     [Header("Weapon")]
+    public GameObject MuzzleFlash;
     public GameObject WeaponPrefab;
     public AmmunitionSO Ammo;
 
     private Transform bulletAnchor;
     private Camera cam;
 
+    public Transform BulletAnchor => bulletAnchor;
+
     public void Shoot(System.Action onTargetShotAction = null)
     {
         cam = Camera.main;
         bulletAnchor = WeaponPrefab.transform.Find("BulletAnchor").transform;
+
         var start = cam.transform.position + bulletAnchor.InverseTransformPoint(bulletAnchor.position);
         var direction = cam.ScreenPointToRay(Input.mousePosition).direction;
+        
 
         for (int i = 0; i < Ammo.BulletCount; i++)
         {
@@ -39,4 +46,6 @@ public class WeaponSO : ScriptableObject
             onTargetShotAction?.Invoke();
         }
     }
+
+    
 }

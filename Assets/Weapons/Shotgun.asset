@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   Range: 50
+  MuzzleFlash: {fileID: 3888721232243861176, guid: 3922c6961c17e2945810cd7dded9ccb2,
+    type: 3}
   WeaponPrefab: {fileID: 8742018295073312687, guid: cf0587020770cbd43a4f1736c9cc3e2b,
     type: 3}
   Ammo: {fileID: 11400000, guid: 8db944c2f98b10143a1578b7d1dc143e, type: 2}

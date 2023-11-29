@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8301929477446401171}
   - component: {fileID: 1276265693317237553}
   - component: {fileID: 1819938378702529039}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 6073746059045151265}
   - component: {fileID: 9192217230982033117}
   - component: {fileID: 8690384306458040035}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 1919653693676044406}
   - component: {fileID: 244158405497453202}
   - component: {fileID: 3560530700391198181}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 6240599450372300730}
   - component: {fileID: 5936180502364043294}
   - component: {fileID: 4041458382145167819}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 6024806409294844572}
   - component: {fileID: 8797661251189732202}
   - component: {fileID: 8286978445764439795}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -538,7 +538,7 @@ GameObject:
   - component: {fileID: 4878841543109598576}
   - component: {fileID: 6168315068407335423}
   - component: {fileID: 5314261255725405409}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,7 +644,7 @@ GameObject:
   - component: {fileID: 6920802905026864934}
   - component: {fileID: 5960961207512728237}
   - component: {fileID: 41697584954770328}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -749,7 +749,7 @@ GameObject:
   - component: {fileID: 3026416243976419896}
   - component: {fileID: 1702159275061417121}
   - component: {fileID: 5470106783381369884}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -851,7 +851,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5197641895491065615}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lab2DoorStraight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

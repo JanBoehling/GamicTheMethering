@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4603321968710764253}
   - component: {fileID: 2788371871552973459}
   - component: {fileID: 3752435927700577257}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 26281181322020470}
   - component: {fileID: 6198132740716350820}
   - component: {fileID: 1431851393749846266}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 6259475542205088061}
   - component: {fileID: 3575219301445386215}
   - component: {fileID: 1027732828274355667}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7946688845345224469}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InbetweenRoom (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 5330420518486001351}
   - component: {fileID: 2971030905253098951}
   - component: {fileID: 9116288126653269801}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bcdca58598f8c44930f630e47eadab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 7309783376150710656, guid: dbbf30c4f75d9d740bd09550acc714af, type: 3}
   doggoPosition: {fileID: 1138002502222268719}
   rbDog: {fileID: 6139274903869522854}
   speed: 10

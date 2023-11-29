@@ -11,12 +11,15 @@ public class PlayerShootController : MonoBehaviour
 
     [SerializeField] private float zoomFOV = 30f;
     [SerializeField] private float zoomSpeed = 10f;
+    private float bulletBaseDeviation;
     private float baseFOV;
     
     private Camera cam;
     private Camera weaponRenderer;
 
     private Coroutine equipWeaponCO;
+
+    private AudioPlayer shotPlayer;
 
     [SerializeField] private int currentWeaponIndex;
     private int CurrentWeaponIndex
@@ -37,33 +40,25 @@ public class PlayerShootController : MonoBehaviour
         cam = Camera.main;
         weaponRenderer = GameObject.Find("WeaponRenderer").GetComponent<Camera>();
         baseFOV = cam.fieldOfView;
+
+        shotPlayer = transform.Find("ShotPlayer").GetComponent<AudioPlayer>();
+    }
+
+    private void Start()
+    {
+        bulletBaseDeviation = weapons[currentWeaponIndex].Ammo.BulletDeviation;
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(shootKey) && weapons[currentWeaponIndex] != null)
         {
-            for (int i = 0; i < weapons[currentWeaponIndex].BulletAnchor.GetChild(0).childCount; i++)
-            {
-                weapons[currentWeaponIndex].BulletAnchor.GetChild(0).GetChild(i).GetComponent<MeshRenderer>().enabled = true;
-            }
             weapons[currentWeaponIndex].Shoot();
-            StartCoroutine(DisableMuzzleFlash());
+            shotPlayer.Play();
         }
 
         if (Input.GetKey(aimKey)) ZoomIn();
         else ZoomOut();
-
-        //CurrentWeaponIndex += (int)Input.mouseScrollDelta.y;
-    }
-
-    public IEnumerator DisableMuzzleFlash()
-    {
-        yield return new WaitForSeconds(.25f);
-        for (int i = 0; i < weapons[currentWeaponIndex].BulletAnchor.GetChild(0).childCount; i++)
-        {
-            weapons[currentWeaponIndex].BulletAnchor.GetChild(0).GetChild(i).GetComponent<MeshRenderer>().enabled = false;
-        }
     }
 
     private void ZoomIn()
@@ -75,6 +70,8 @@ public class PlayerShootController : MonoBehaviour
         // Zoom in weapon renderer
         if (weaponRenderer.fieldOfView > zoomFOV + (baseFOV - zoomFOV) * .5f) weaponRenderer.fieldOfView -= Time.deltaTime * zoomSpeed * .5f;
         else weaponRenderer.fieldOfView = zoomFOV + (baseFOV - zoomFOV) * .5f;
+
+        weapons[currentWeaponIndex].Ammo.BulletDeviation = 0f;
     }
 
     private void ZoomOut()
@@ -86,6 +83,8 @@ public class PlayerShootController : MonoBehaviour
         // Zoom out weapon renderer
         if (weaponRenderer.fieldOfView < baseFOV) weaponRenderer.fieldOfView += Time.deltaTime * zoomSpeed * .5f;
         else weaponRenderer.fieldOfView = baseFOV;
+
+        weapons[currentWeaponIndex].Ammo.BulletDeviation = bulletBaseDeviation;
     }
 
     private IEnumerator EquipWeaponCO()
@@ -96,5 +95,7 @@ public class PlayerShootController : MonoBehaviour
 
         Destroy(weaponAnchor.GetChild(0).gameObject);
         Instantiate(weapons[CurrentWeaponIndex], weaponAnchor);
+
+        bulletBaseDeviation = weapons[CurrentWeaponIndex].Ammo.BulletDeviation;
     }
 }

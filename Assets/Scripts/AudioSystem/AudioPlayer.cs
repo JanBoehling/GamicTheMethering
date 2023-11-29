@@ -24,7 +24,7 @@ public class AudioPlayer : MonoBehaviour
         PlayAllLooping
     }
     
-    private AudioSource audioSource;
+    protected AudioSource audioSource;
 
     private void Awake()
     {

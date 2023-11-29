@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody), typeof(Collider))]
 public class PlayerController : MonoBehaviour
@@ -7,6 +8,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField][Range(0, 1000)] private float baseMovementSpeed = 500f;
     [SerializeField][Range(0, 10)] private float runSpeedMultiplier = 2f;
     [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
+    [SerializeField] private UnityEvent onBeginWalk;
+    [SerializeField] private UnityEvent onBeginRun;
+    [SerializeField] private UnityEvent onEndWalk;
+    [SerializeField] private UnityEvent onEndRun;
 
     [Header("Fields for sneaking")]
     [SerializeField] private KeyCode sneakKey = KeyCode.LeftControl;
@@ -80,6 +85,9 @@ public class PlayerController : MonoBehaviour
         float xDirection = Input.GetAxisRaw("Horizontal");
         float yDirection = Input.GetAxisRaw("Vertical");
 
+        if (xDirection != 0 || yDirection != 0) onBeginWalk?.Invoke();
+        else onEndWalk?.Invoke();
+
         movementDirection = (xDirection * transform.right + yDirection * transform.forward).normalized;
     }
 
@@ -88,7 +96,12 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void CalculateMovementSpeed()
     {
-        speed = Input.GetKey(sprintKey) ? baseMovementSpeed * runSpeedMultiplier : baseMovementSpeed;
+        bool isSprinting = Input.GetKey(sprintKey);
+
+        if (isSprinting) onBeginRun?.Invoke();
+        else onEndRun?.Invoke();
+
+        speed = isSprinting ? baseMovementSpeed * runSpeedMultiplier : baseMovementSpeed;
         if (IsSneaking) speed *= sneakSpeedMultiplier;
     }
 

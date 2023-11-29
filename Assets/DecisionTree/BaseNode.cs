@@ -30,7 +30,10 @@ public class BaseNode : MonoBehaviour, IEnemy
         set
         {
             health = value;
-            if (health <= 0) Destroy(gameObject);
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -107,6 +110,6 @@ public class BaseNode : MonoBehaviour, IEnemy
 
     public void TakeDamage(float damage)
     {
-        Health--;
+        Health -= (int)damage;
     }
 }

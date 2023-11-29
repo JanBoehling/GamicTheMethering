@@ -5724,7 +5724,7 @@ MonoBehaviour:
   SpawnObject: {fileID: 7935434590671151751, guid: 9c83ed1f889bb5742a8236039cc46eb4,
     type: 3}
   SpawnArea: {fileID: 0}
-  spawnheight: 1
+  spawnheight: 0.951
   maxTries: 10
   minDistanceToPlayer: 0.5
   minDistanceToOtherObjects: 0.5

@@ -8,7 +8,8 @@ public class Spawner : MonoBehaviour
 {
     #region Variablen
     [Header("Objects")]
-    [SerializeField] public GameObject SpawnObject;                             // Objekt, das erzeugt werden soll.              
+    [SerializeField] public GameObject SpawnObject;                             // Objekt, das erzeugt werden soll.
+    [SerializeField] public BoxCollider SpawnArea;                              // SpawnArea
 
     [Header("Values")]
     [SerializeField] float spawnheight;                                         // Feste Höhe, auf der das Objekt erzeugt werden soll.
@@ -43,14 +44,47 @@ public class Spawner : MonoBehaviour
     /// <returns></returns>
     private IEnumerator SpawnCoroutine(int amountOfSpawns, int timeBetweenSpawns)
     {
-        List<BoxCollider> spawnAreas = GetSpawnAreas();
-
-        // Die Schleife führt die Spawn Methode je nach Menge der zu erzeugen Objekten aus.
-        for (int i = 0; i < amountOfSpawns; i++)
+        // Wurde keine SpawnArea verknüpft?
+        if (SpawnArea == null) 
         {
-            SpawnObjectAtRandom(SpawnObject, GetRandomSpawnArea(spawnAreas));
-            yield return new WaitForSeconds(timeBetweenSpawns);
+            List<BoxCollider> spawnAreas = GetSpawnAreas();
+
+            // Wenn es nur eine SpawnArea gibt
+            if (spawnAreas.Count == 1)
+            {
+                // Die Schleife führt die Spawn Methode je nach Menge der zu erzeugen Objekten aus.
+                for (int i = 0; i < amountOfSpawns; i++)
+                {
+                    SpawnObjectAtRandom(SpawnObject, GetSpawnArea());
+                    yield return new WaitForSeconds(timeBetweenSpawns);
+                }
+            }
+            // Wenn es mehrere SpawnAras gibt.
+            else if (spawnAreas.Count > 1)
+            {
+                // Die Schleife führt die Spawn Methode je nach Menge der zu erzeugen Objekten aus.
+                for (int i = 0; i < amountOfSpawns; i++)
+                {
+                    SpawnObjectAtRandom(SpawnObject, GetRandomSpawnArea(spawnAreas));
+                    yield return new WaitForSeconds(timeBetweenSpawns);
+                }
+            }
+            // Wenn es keine SpawnAras gibt.
+            else
+            {
+                Debug.LogWarning("No spawn areas with the tag \"SpawnArea\" could be found.");
+            }
         }
+        else
+        {
+            // Die Schleife führt die Spawn Methode je nach Menge der zu erzeugen Objekten aus.
+            for (int i = 0; i < amountOfSpawns; i++)
+            {
+                SpawnObjectAtRandom(SpawnObject, SpawnArea);
+                yield return new WaitForSeconds(timeBetweenSpawns);
+            }
+        }
+       
 
         // Sobald mindestens ein Objekt nicht erzeugt werden konnte, wird folgendes ausgeben. 
 #if UNITY_EDITOR
@@ -72,7 +106,7 @@ public class Spawner : MonoBehaviour
         GameObject lastObject;                                                      // Nimmt das zuletzt erzeugte Objekt an und speichert dieses.
         bool overlay = false;                                                       // Gibt an, ob das Objekt sich beim Erzeugen mit einem anderen Objekt überlagern würde.
         int currentTries = 0;                                                       // Aktuelle Anzahl an Versuchen, eine Spawn-Position zu finden.
-        GameObject player = GameObject.FindGameObjectWithTag("Player");    // Verknüpfung zum Spieler.
+        GameObject player = GameObject.FindGameObjectWithTag("Player");             // Verknüpfung zum Spieler.
 
         do
         {
@@ -160,11 +194,6 @@ public class Spawner : MonoBehaviour
         // Sammle alle Objekte mit dem Tag "SpawnArea"
         GameObject[] spawnAreaObjects = GameObject.FindGameObjectsWithTag("SpawnArea");
 
-        if (spawnAreas.Count == 0) 
-        {
-            Debug.LogWarning("No spawn areas with the tag \"SpawnArea\" could be found.");
-        }
-
         // Füge die gefundenen BoxCollider zur Liste hinzu
         foreach (GameObject spawnAreaObject in spawnAreaObjects)
         {
@@ -179,6 +208,18 @@ public class Spawner : MonoBehaviour
         }
 
         return spawnAreas;
+    }
+
+    /// <summary>
+    /// Gibt die SpawnArea zurück. 
+    /// </summary>
+    /// <returns></returns>
+    private BoxCollider GetSpawnArea()
+    {
+        GameObject spawnArea = GameObject.FindGameObjectWithTag("SpawnArea");
+        BoxCollider boxCollider = spawnArea.GetComponent<BoxCollider>();
+
+        return boxCollider;
     }
 
     /// <summary>

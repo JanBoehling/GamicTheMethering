@@ -555,7 +555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnObject: {fileID: 7774659513515749410, guid: e9b8ec683b6f933449cbaf54ad6736af,
     type: 3}
-  SpawnArea: {fileID: 1739975563}
+  SpawnArea: {fileID: 0}
   spawnheight: 179.29
   maxTries: 10
   minDistanceToPlayer: 1
@@ -695,7 +695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnObject: {fileID: 4327940315809100504, guid: 8c9213415b07ec8419856226b53377ef,
     type: 3}
-  SpawnArea: {fileID: 1739975563}
+  SpawnArea: {fileID: 0}
   spawnheight: 179.08
   maxTries: 10
   minDistanceToPlayer: 1
@@ -1231,9 +1231,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelSettings: {fileID: 11400000, guid: 7727600fe28c13841acdd1ad7c6b409d, type: 2}
-  testEnemy1: {fileID: 1635076409}
-  testEnemy2: {fileID: 803249537}
-  testEnemy3: {fileID: 1967000877}
+  enemy1: {fileID: 1635076409}
+  enemy2: {fileID: 803249537}
+  enemy3: {fileID: 1967000877}
   boss1: {fileID: 1840573903}
   boss2: {fileID: 1705841134}
   boss3: {fileID: 336655211}
@@ -1294,9 +1294,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784e67945cc82a6469437c046fb55458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnObject: {fileID: 4327940315809100504, guid: 368219729755ae3468f7d43aeaae2535,
+  SpawnObject: {fileID: 6177031437304900664, guid: 3b79a2ddd43732f40a4bc4cf2ecdbe5c,
     type: 3}
-  SpawnArea: {fileID: 1739975563}
+  SpawnArea: {fileID: 0}
   spawnheight: 179.08
   maxTries: 10
   minDistanceToPlayer: 1
@@ -1402,7 +1402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnObject: {fileID: 7774659513515749410, guid: e9b8ec683b6f933449cbaf54ad6736af,
     type: 3}
-  SpawnArea: {fileID: 1739975563}
+  SpawnArea: {fileID: 0}
   spawnheight: 179.29
   maxTries: 10
   minDistanceToPlayer: 1
@@ -1508,7 +1508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnObject: {fileID: 7774659513515749410, guid: e9b8ec683b6f933449cbaf54ad6736af,
     type: 3}
-  SpawnArea: {fileID: 1739975563}
+  SpawnArea: {fileID: 0}
   spawnheight: 179.29
   maxTries: 10
   minDistanceToPlayer: 1
@@ -1561,7 +1561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnObject: {fileID: 4327940315809100504, guid: ca17e0da14a06214197da628e937dce1,
     type: 3}
-  SpawnArea: {fileID: 1739975563}
+  SpawnArea: {fileID: 0}
   spawnheight: 179.08
   maxTries: 10
   minDistanceToPlayer: 1

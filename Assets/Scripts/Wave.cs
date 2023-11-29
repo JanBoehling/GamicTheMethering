@@ -10,9 +10,9 @@ public class Wave : MonoBehaviour
     [SerializeField] private LevelSettings levelSettings; // Verknüpfung zu den Level Einstellungen
 
     [Header("Enemies")]
-    [SerializeField] private Spawner testEnemy1;          // Verknüpfung zu einem Gegner
-    [SerializeField] private Spawner testEnemy2;          // Verknüpfung zu einem Gegner
-    [SerializeField] private Spawner testEnemy3;          // Verknüpfung zu einem Gegner
+    [SerializeField] private Spawner enemy1;              // Verknüpfung zu einem Gegner
+    [SerializeField] private Spawner enemy2;              // Verknüpfung zu einem Gegner
+    [SerializeField] private Spawner enemy3;              // Verknüpfung zu einem Gegner
 
     [Header("Boss")]
     [SerializeField] private Spawner boss1;               // Verknüpfung zum ersten Boss
@@ -153,9 +153,9 @@ public class Wave : MonoBehaviour
         int[] distribution = SpawnDistribution();
 
         // Monster erzeugen 
-        testEnemy1.Spawn(distribution[0], levelSettings.TimeBetweenSpawns);
-        testEnemy2.Spawn(distribution[1], levelSettings.TimeBetweenSpawns);
-        testEnemy3.Spawn(distribution[2], levelSettings.TimeBetweenSpawns);
+        enemy1.Spawn(distribution[0], levelSettings.TimeBetweenSpawns);
+        enemy2.Spawn(distribution[1], levelSettings.TimeBetweenSpawns);
+        enemy3.Spawn(distribution[2], levelSettings.TimeBetweenSpawns);
 
         // Boss erzeugen 
         if (waveNumber == 5) { boss1.Spawn(1, levelSettings.TimeBetweenSpawns); }

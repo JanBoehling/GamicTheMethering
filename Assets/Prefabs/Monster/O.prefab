@@ -275,7 +275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116b0722ee61b9e4a9a8d8e0c6eaa31a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentZombie: {fileID: 5092533218972288817}
   player: {fileID: 2805460722208457159, guid: dbbf30c4f75d9d740bd09550acc714af, type: 3}
   health: 3
 --- !u!195 &5092533218972288817
@@ -297,7 +296,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!4 &653330966919490575 stripped

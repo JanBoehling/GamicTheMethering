@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,8 +8,7 @@ public class Spawner : MonoBehaviour
 {
     #region Variablen
     [Header("Objects")]
-    [SerializeField] public GameObject SpawnObject;                             // Objekt, das erzeugt werden soll.
-    [SerializeField] public BoxCollider SpawnArea;                              // Bereich, indem die Objekte erzeugt werden sollen.                 
+    [SerializeField] public GameObject SpawnObject;                             // Objekt, das erzeugt werden soll.              
 
     [Header("Values")]
     [SerializeField] float spawnheight;                                         // Feste Höhe, auf der das Objekt erzeugt werden soll.
@@ -43,10 +43,12 @@ public class Spawner : MonoBehaviour
     /// <returns></returns>
     private IEnumerator SpawnCoroutine(int amountOfSpawns, int timeBetweenSpawns)
     {
+        List<BoxCollider> spawnAreas = GetSpawnAreas();
+
         // Die Schleife führt die Spawn Methode je nach Menge der zu erzeugen Objekten aus.
         for (int i = 0; i < amountOfSpawns; i++)
         {
-            SpawnObjectAtRandom(SpawnObject, SpawnArea);
+            SpawnObjectAtRandom(SpawnObject, GetRandomSpawnArea(spawnAreas));
             yield return new WaitForSeconds(timeBetweenSpawns);
         }
 
@@ -64,7 +66,7 @@ public class Spawner : MonoBehaviour
     /// </summary>
     /// <param name="spawnObject">Objekt, dass erzeugt werden soll</param>
     /// <param name="spawnArea">Bereich, in dem das Objekt erzeugt werden soll</param>
-    public void SpawnObjectAtRandom(GameObject spawnObject, BoxCollider spawnArea)
+    private void SpawnObjectAtRandom(GameObject spawnObject, BoxCollider spawnArea)
     {
         // Lokale Variable
         GameObject lastObject;                                                      // Nimmt das zuletzt erzeugte Objekt an und speichert dieses.
@@ -129,7 +131,7 @@ public class Spawner : MonoBehaviour
     /// </summary>
     /// <param name="spawnArea">Bereich, in dem das Objekt erzeugt werden soll</param>
     /// <returns></returns>
-    public Vector3 GetRandomSpawnPosition(BoxCollider spawnArea)
+    private Vector3 GetRandomSpawnPosition(BoxCollider spawnArea)
     {
         if (useConstantSpawnHeight)
         {
@@ -144,6 +146,60 @@ public class Spawner : MonoBehaviour
                  UnityEngine.Random.Range(spawnArea.bounds.min.x, spawnArea.bounds.max.x),
                  UnityEngine.Random.Range(spawnArea.bounds.min.y, spawnArea.bounds.max.y),
                  UnityEngine.Random.Range(spawnArea.bounds.min.z, spawnArea.bounds.max.z));
+        }
+    }
+
+    /// <summary>
+    /// Gibt alle SpawnAreas in einer Liste zurück.
+    /// </summary>
+    /// <returns></returns>
+    private List<BoxCollider> GetSpawnAreas() 
+    {
+        List<BoxCollider> spawnAreas = new List<BoxCollider>();
+
+        // Sammle alle Objekte mit dem Tag "SpawnArea"
+        GameObject[] spawnAreaObjects = GameObject.FindGameObjectsWithTag("SpawnArea");
+
+        if (spawnAreas.Count == 0) 
+        {
+            Debug.LogWarning("No spawn areas with the tag \"SpawnArea\" could be found.");
+        }
+
+        // Füge die gefundenen BoxCollider zur Liste hinzu
+        foreach (GameObject spawnAreaObject in spawnAreaObjects)
+        {
+            // Versuche den BoxCollider des GameObjects zu erhalten
+            BoxCollider boxCollider = spawnAreaObject.GetComponent<BoxCollider>();
+
+            // Füge nur hinzu, wenn ein BoxCollider gefunden wurde
+            if (boxCollider != null)
+            {
+                spawnAreas.Add(boxCollider);
+            }
+        }
+
+        return spawnAreas;
+    }
+
+    /// <summary>
+    /// Gibt eine zufällige SpawnArea zurück.
+    /// </summary>
+    /// <param name="spawnAreas">Liste mit den spawnAreas</param>
+    /// <returns></returns>
+    private BoxCollider GetRandomSpawnArea(List<BoxCollider> spawnAreas)
+    {
+        if (spawnAreas.Count > 0)
+        {
+            // Generiere einen zufälligen Index
+            int randomIndex = UnityEngine.Random.Range(0, spawnAreas.Count);
+
+            // Gib den BoxCollider an der zufälligen Indexposition zurück
+            return spawnAreas[randomIndex];
+        }
+        else
+        {
+            // Falls die Liste leer ist, gib null zurück
+            return null;
         }
     }
 

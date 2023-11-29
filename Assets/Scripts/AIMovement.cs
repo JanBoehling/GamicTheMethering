@@ -5,12 +5,23 @@ using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AIMovement : MonoBehaviour
+public class AIMovement : MonoBehaviour, IEnemy
 {
     [SerializeField] NavMeshAgent agentZombie;
     [SerializeField] Transform player;
     float timeToStop = 5f;
     float maxTimeInterval = 5f;
+
+    [SerializeField] private int health = 3;
+    public int Health
+    { 
+        get => health;
+        set
+        {
+            health = value;
+            if (health <= 0) Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {
@@ -42,5 +53,10 @@ public class AIMovement : MonoBehaviour
                 timeToStop = maxTimeInterval;
                 agentZombie.isStopped = false;
             }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        Health--;
     }
 }

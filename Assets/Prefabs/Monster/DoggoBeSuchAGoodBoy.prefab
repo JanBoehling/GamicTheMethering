@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6638184467445817021}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DoggoBeSuchAGoodBoy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,6 +40,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6638184467445817021}
     m_Modifications:
+    - target: {fileID: -8713486109959336459, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9489c6b4418b9584d83a074070e81dc4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -90,16 +95,136 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8081348558823717844, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -7547988612322845313, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -7229781690365074955, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -6714545642603840610, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -6561815936685080706, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -6177509979527109023, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -5090355075760594317, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4416568882675808140, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4057245975618196947, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -3140963133903121732, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2689783927164899718, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2097218277451053535, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 422128399842248875, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9489c6b4418b9584d83a074070e81dc4,
         type: 3}
       propertyPath: m_Name
       value: SK_Doggo
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1094859603685116602, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134951815588960339, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1813742149714592657, guid: 9489c6b4418b9584d83a074070e81dc4,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f46c4c75534cd8841aacdcc31c33445d, type: 2}
+    - target: {fileID: 3206673767272776935, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782969165219850690, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264415798941838902, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986540600011335320, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7032537811324817278, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120277114046323282, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7433612771664773294, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9185133190554807032, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -219,6 +344,7 @@ MonoBehaviour:
   minJumpDistance: 20
   maxJumpDistance: 40
   directionSpeed: 0
+  health: 0
 --- !u!54 &6139274903869522854
 Rigidbody:
   m_ObjectHideFlags: 0

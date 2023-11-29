@@ -37,8 +37,13 @@ public class WeaponSO : ScriptableObject
             Debug.DrawRay(start, (direction + deviation).normalized * Range, Color.red, 5f);
 
             if (!Physics.Raycast(start, direction + deviation, out var hit, Range, LayerMask.GetMask("Shootable"))) return;
-            
-            if (!hit.transform.TryGetComponent<DebugEnemyDamage>(out var target)) return;
+            Debug.Log(hit.transform.root.name);
+            var target = hit.transform.root.GetComponentInChildren<IEnemy>();
+            if (target == null)
+            {
+                Debug.LogError("target is null");
+                return;
+            }
 
             target.TakeDamage(Ammo.DamagePerBullet);
             onTargetShotAction?.Invoke();

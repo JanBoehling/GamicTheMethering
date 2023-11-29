@@ -4,7 +4,7 @@ using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class BaseNode : MonoBehaviour
+public class BaseNode : MonoBehaviour, IEnemy
 {
     [SerializeField] GameObject player;
     [SerializeField] GameObject doggoPosition;
@@ -22,6 +22,17 @@ public class BaseNode : MonoBehaviour
     bool timerFinished = false;
     bool hasJumped = false;
     bool groundCheck = false;
+
+    [SerializeField] private int health = 3;
+    public int Health
+    {
+        get => health;
+        set
+        {
+            health = value;
+            if (health <= 0) Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {
@@ -94,4 +105,8 @@ public class BaseNode : MonoBehaviour
         }
     }
 
+    public void TakeDamage(float damage)
+    {
+        Health--;
+    }
 }

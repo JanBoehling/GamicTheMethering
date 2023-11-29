@@ -7,12 +7,17 @@ using UnityEngine.AI;
 
 public class AIMovement : MonoBehaviour, IEnemy
 {
-    [SerializeField] NavMeshAgent agentZombie;
-    [SerializeField] Transform player;
+    NavMeshAgent agentZombie;
+    GameObject player;
     float timeToStop = 5f;
     float maxTimeInterval = 5f;
-
     [SerializeField] private int health = 3;
+
+    private void Awake()
+    {
+        agentZombie = GetComponent<NavMeshAgent>();
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
     public int Health
     { 
         get => health;
@@ -25,12 +30,12 @@ public class AIMovement : MonoBehaviour, IEnemy
 
     private void Start()
     {
-        agentZombie.SetDestination(player.position);
+        agentZombie.SetDestination(player.transform.position);
     }
 
     private void Update()
     {
-        agentZombie.SetDestination(player.position);
+        agentZombie.SetDestination(player.transform.position);
         timeToStop -= Time.deltaTime;
         
         //Debug.Log(timeToStop);

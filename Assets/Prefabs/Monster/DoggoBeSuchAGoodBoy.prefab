@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6638184467445817021}
   m_Layer: 7
   m_Name: DoggoBeSuchAGoodBoy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,6 +110,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -7229781690365074955, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: -6714545642603840610, guid: 9489c6b4418b9584d83a074070e81dc4,
         type: 3}
       propertyPath: m_Layer
@@ -169,6 +174,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9489c6b4418b9584d83a074070e81dc4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1094859603685116602, guid: 9489c6b4418b9584d83a074070e81dc4,
         type: 3}

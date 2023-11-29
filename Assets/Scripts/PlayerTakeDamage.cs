@@ -22,6 +22,7 @@ public class PlayerTakeDamage : MonoBehaviour
 
     public void TakingDamage()
     {
+
         health--;
         textMeshText.text = health.ToString();
     }

@@ -8,6 +8,7 @@ public class Wave : MonoBehaviour
     #region Variablen
     [Header("Connections")]
     [SerializeField] private LevelSettings levelSettings; // Verknüpfung zu den Level Einstellungen
+    [SerializeField] private GameObject player;           // Verknüpfung zum Player
 
     [Header("Enemies")]
     [SerializeField] private Spawner enemy1;              // Verknüpfung zu einem Gegner
@@ -160,7 +161,13 @@ public class Wave : MonoBehaviour
         // Boss erzeugen 
         if (waveNumber == 5) { boss1.Spawn(1, levelSettings.TimeBetweenSpawns); }
         if (waveNumber == 10) { boss2.Spawn(1, levelSettings.TimeBetweenSpawns); }
-        if (waveNumber == 15) { boss3.Spawn(1, levelSettings.TimeBetweenSpawns); }
+        if (waveNumber == 15) 
+        { 
+            boss3.Spawn(1, levelSettings.TimeBetweenSpawns);
+
+            PlayerVision plyerVision = player.GetComponent<PlayerVision>();
+            plyerVision.enabled = true;
+        }
 
     }
     #endregion

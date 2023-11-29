@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 11781794}
   - component: {fileID: 11781793}
   - component: {fileID: 11781792}
-  - component: {fileID: 11781798}
+  - component: {fileID: 11781799}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -288,7 +288,7 @@ Transform:
   - {fileID: 1058838735}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -175.95, z: 0}
---- !u!114 &11781798
+--- !u!114 &11781799
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -297,40 +297,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 11781791}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 211d9377894530045a5fa186d19bbf8e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b7d28a6c7e790e4ea95c4bd417f96f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  onTargetVisible:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Statue, Assembly-CSharp
-        m_MethodName: IsVisible
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onTargetInvisible:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Statue, Assembly-CSharp
-        m_MethodName: IsInvisible
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  textMeshText: {fileID: 1779699209}
+  health: 3
 --- !u!1 &173700432
 GameObject:
   m_ObjectHideFlags: 0

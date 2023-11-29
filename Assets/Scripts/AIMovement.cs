@@ -57,6 +57,6 @@ public class AIMovement : MonoBehaviour, IEnemy
 
     public void TakeDamage(float damage)
     {
-        Health--;
+        Health -= (int)damage;
     }
 }

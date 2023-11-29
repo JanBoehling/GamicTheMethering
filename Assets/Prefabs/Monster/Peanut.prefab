@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3383636811935710637}
   m_Layer: 7
   m_Name: Peanut
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,7 +69,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statueAgent: {fileID: 1732704774148425061}
-  playerPosition: {fileID: 0}
+  playerPosition: {fileID: 2805460722208457159, guid: dbbf30c4f75d9d740bd09550acc714af,
+    type: 3}
 --- !u!1001 &3807281757936142139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -152,6 +153,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f728a693708359d4d97c18dfa75a4686,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

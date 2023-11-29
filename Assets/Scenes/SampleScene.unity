@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4040,106 +4040,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2103431249}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &2132667455
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6177031437304900664, guid: 3b79a2ddd43732f40a4bc4cf2ecdbe5c,
-        type: 3}
-      propertyPath: m_Name
-      value: O
-      objectReference: {fileID: 0}
-    - target: {fileID: 8613562171912383094, guid: 3b79a2ddd43732f40a4bc4cf2ecdbe5c,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -10.820799
-      objectReference: {fileID: 0}
-    - target: {fileID: 8613562171912383094, guid: 3b79a2ddd43732f40a4bc4cf2ecdbe5c,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.106
-      objectReference: {fileID: 0}
-    - target: {fileID: 8613562171912383094, guid: 3b79a2ddd43732f40a4bc4cf2ecdbe5c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 32.776196
-      objectReference: {fileID: 0}
-    - target: {fileID: 8613562171912383094, guid: 3b79a2ddd43732f40a4bc4cf2ecdbe5c,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8613562171912383094, guid: 3b79a2ddd43732f40a4bc4cf2ecdbe5c,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8613562171912383094, guid: 3b79a2ddd43732f40a4bc4cf2ecdbe5c,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8613562171912383094, guid: 3b79a2ddd43732f40a4bc4cf2ecdbe5c,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8613562171912383094, guid: 3b79a2ddd43732f40a4bc4cf2ecdbe5c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8613562171912383094, guid: 3b79a2ddd43732f40a4bc4cf2ecdbe5c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8613562171912383094, guid: 3b79a2ddd43732f40a4bc4cf2ecdbe5c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1253021315050766522, guid: 3b79a2ddd43732f40a4bc4cf2ecdbe5c, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 169669629597185717, guid: 3b79a2ddd43732f40a4bc4cf2ecdbe5c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2132667457}
-  m_SourcePrefab: {fileID: 100100000, guid: 3b79a2ddd43732f40a4bc4cf2ecdbe5c, type: 3}
---- !u!1 &2132667456 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 169669629597185717, guid: 3b79a2ddd43732f40a4bc4cf2ecdbe5c,
-    type: 3}
-  m_PrefabInstance: {fileID: 2132667455}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &2132667457
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2132667456}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2e09c13e28f8e13419c6005535bedf1b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4150,4 +4050,3 @@ SceneRoots:
   - {fileID: 1714728528}
   - {fileID: 544133525}
   - {fileID: 1543506698}
-  - {fileID: 2132667455}

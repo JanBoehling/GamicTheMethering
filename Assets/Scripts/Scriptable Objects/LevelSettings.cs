@@ -42,7 +42,6 @@ public class LevelSettings : ScriptableObject
     public bool SpawnNormalEnemiesAtBossWave { get { return spawnNormalEnemiesAtBossWave; } }
     public bool StopAfterWave15 { get { return stopAfterWave15; } }
 
-
     #region Enemy Distribution Percentages
     public int Enemy1PercentageD1 { get { return enemy1PercentageD1; } }
     public int Enemy2PercentageD1 { get { return enemy2PercentageD1; } }

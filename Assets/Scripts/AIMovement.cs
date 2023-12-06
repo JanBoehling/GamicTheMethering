@@ -12,9 +12,11 @@ public class AIMovement : MonoBehaviour, IEnemy
     float timeToStop = 5f;
     float maxTimeInterval = 5f;
     [SerializeField] private int health = 3;
+    [SerializeField] Animator animatorZombie;
 
     private void Awake()
     {
+        //animatorZombie = GetComponent<Animator>();
         agentZombie = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -31,6 +33,7 @@ public class AIMovement : MonoBehaviour, IEnemy
     private void Start()
     {
         agentZombie.SetDestination(player.transform.position);
+        animatorZombie.SetInteger("e", 1);
     }
 
     private void Update()
@@ -42,6 +45,7 @@ public class AIMovement : MonoBehaviour, IEnemy
 
         if (timeToStop <= 3)
         {
+            animatorZombie.SetInteger("e", 0);
             //Debug.Log("Time Reached Zero");
             StopMoving();
         }
@@ -57,6 +61,7 @@ public class AIMovement : MonoBehaviour, IEnemy
                 //Debug.Log("End freezing");
                 timeToStop = maxTimeInterval;
                 agentZombie.isStopped = false;
+                animatorZombie.SetInteger("e", 1);
             }
     }
 

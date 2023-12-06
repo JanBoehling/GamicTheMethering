@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -514,6 +514,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbbf30c4f75d9d740bd09550acc714af, type: 3}
+--- !u!95 &803961366 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 35546055242575907, guid: fe43ec78f54da2e43989ddcb86142161,
+    type: 3}
+  m_PrefabInstance: {fileID: 1192474175}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &836289542
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,6 +692,90 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  animatorZombie: {fileID: 0}
+--- !u!1001 &1192474175
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 591463232803692410, guid: fe43ec78f54da2e43989ddcb86142161,
+        type: 3}
+      propertyPath: m_Name
+      value: O_Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 1832364779366544174, guid: fe43ec78f54da2e43989ddcb86142161,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1832364779366544174, guid: fe43ec78f54da2e43989ddcb86142161,
+        type: 3}
+      propertyPath: animatorZombie
+      value: 
+      objectReference: {fileID: 803961366}
+    - target: {fileID: 2536893762464612535, guid: fe43ec78f54da2e43989ddcb86142161,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -36.837368
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536893762464612535, guid: fe43ec78f54da2e43989ddcb86142161,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536893762464612535, guid: fe43ec78f54da2e43989ddcb86142161,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.292131
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536893762464612535, guid: fe43ec78f54da2e43989ddcb86142161,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536893762464612535, guid: fe43ec78f54da2e43989ddcb86142161,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536893762464612535, guid: fe43ec78f54da2e43989ddcb86142161,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536893762464612535, guid: fe43ec78f54da2e43989ddcb86142161,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536893762464612535, guid: fe43ec78f54da2e43989ddcb86142161,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536893762464612535, guid: fe43ec78f54da2e43989ddcb86142161,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536893762464612535, guid: fe43ec78f54da2e43989ddcb86142161,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971776292525015099, guid: fe43ec78f54da2e43989ddcb86142161,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe43ec78f54da2e43989ddcb86142161, type: 3}
 --- !u!1 &1433107322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,3 +1258,4 @@ SceneRoots:
   - {fileID: 1433107324}
   - {fileID: 1669423043}
   - {fileID: 660287643}
+  - {fileID: 1192474175}

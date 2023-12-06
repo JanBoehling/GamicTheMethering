@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6382576381917104775}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BulletAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4528066451866440315}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 5873731998418527537}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.8512261, y: 0, z: -9.171186}
+  m_LocalPosition: {x: 0, y: 0, z: -9.171186}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -72,6 +72,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4528066451866440315}
     m_Modifications:
+    - target: {fileID: -9090727910678962686, guid: 81b2e6a351e12a1488e146a1278457e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81b2e6a351e12a1488e146a1278457e5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -127,21 +132,66 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e01e78ef9b12e5d4b89abfc8358fcf4d, type: 2}
+    - target: {fileID: -6642045934342962037, guid: 81b2e6a351e12a1488e146a1278457e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -5161589289235357263, guid: 81b2e6a351e12a1488e146a1278457e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -3811897083987879047, guid: 81b2e6a351e12a1488e146a1278457e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -3800378311871163899, guid: 81b2e6a351e12a1488e146a1278457e5,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e24d99bb3314652468d4d65203ad9a2a, type: 2}
+    - target: {fileID: -1273075384593390939, guid: 81b2e6a351e12a1488e146a1278457e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -634197488826617840, guid: 81b2e6a351e12a1488e146a1278457e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -454033054695631837, guid: 81b2e6a351e12a1488e146a1278457e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 81b2e6a351e12a1488e146a1278457e5,
         type: 3}
       propertyPath: m_Name
       value: Fixed_Shotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 81b2e6a351e12a1488e146a1278457e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4566648614187500854, guid: 81b2e6a351e12a1488e146a1278457e5,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e24d99bb3314652468d4d65203ad9a2a, type: 2}
+    - target: {fileID: 5634829522678661324, guid: 81b2e6a351e12a1488e146a1278457e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8689573065406075036, guid: 81b2e6a351e12a1488e146a1278457e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

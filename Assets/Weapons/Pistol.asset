@@ -15,6 +15,6 @@ MonoBehaviour:
   Range: 1000
   MuzzleFlash: {fileID: 3888721232243861176, guid: 3922c6961c17e2945810cd7dded9ccb2,
     type: 3}
-  WeaponPrefab: {fileID: 7026944286448587693, guid: 9c01c73e4f2a92840a7eacb1f8b79e96,
+  WeaponPrefab: {fileID: 6686713229235319993, guid: 9c01c73e4f2a92840a7eacb1f8b79e96,
     type: 3}
   Ammo: {fileID: 11400000, guid: 1f0a1d24bccce3040a3d8363a64f2554, type: 2}

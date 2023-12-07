@@ -9,8 +9,8 @@ public class AIMovement : MonoBehaviour, IEnemy
 {
     NavMeshAgent agentZombie;
     GameObject player;
-    float timeToStop = 5f;
-    float maxTimeInterval = 5f;
+    float timeToStop = 10f;
+    float maxTimeInterval = 10f;
     [SerializeField] private int health = 3;
     [SerializeField] Animator animatorZombie;
 

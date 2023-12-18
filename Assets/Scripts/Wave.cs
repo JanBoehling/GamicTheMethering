@@ -7,22 +7,25 @@ public class Wave : MonoBehaviour
 {
     #region Variablen
     [Header("Connections")]
-    [SerializeField] private LevelSettings levelSettings; // Verknüpfung zu den Level Einstellungen
-    [SerializeField] private GameObject player;           // Verknüpfung zum Player
+    [SerializeField] private LevelSettings levelSettings;            // Verknüpfung zu den Level Einstellungen
+    [SerializeField] private GameObject player;                      // Verknüpfung zum Player
 
     [Header("Enemies")]
-    [SerializeField] private Spawner enemy1;              // Verknüpfung zu einem Gegner
-    [SerializeField] private Spawner enemy2;              // Verknüpfung zu einem Gegner
-    [SerializeField] private Spawner enemy3;              // Verknüpfung zu einem Gegner
-
-    [Header("Boss")]
-    [SerializeField] private Spawner boss1;               // Verknüpfung zum ersten Boss
-    [SerializeField] private Spawner boss2;               // Verknüpfung zum ersten Boss
-    [SerializeField] private Spawner boss3;               // Verknüpfung zum ersten Boss
+    [SerializeField] private Spawner enemy1;                         // Verknüpfung zu einem Gegner
+    [SerializeField] private Spawner enemy2;                         // Verknüpfung zu einem Gegner
+    [SerializeField] private Spawner enemy3;                         // Verknüpfung zu einem Gegner
+                                                                     
+    [Header("Boss")]                                                 
+    [SerializeField] private Spawner boss1;                          // Verknüpfung zum ersten Boss
+    [SerializeField] private Spawner boss2;                          // Verknüpfung zum ersten Boss
+    [SerializeField] private Spawner boss3;                          // Verknüpfung zum ersten Boss
 
     [Header("Other")]
-    private int waveNumber;                               // Anzahl der Welle 
-    private float numberOfObjectsToSpawn;                 // Anzahl an Gegners
+    [HideInInspector] public int GeneratedEnemies;                   // Anzahl der erzeugten Gegner innerhalb einer welle
+    private int waveNumber;                                          // Anzahl der Welle 
+    private float numberOfObjectsToSpawn;                            // Anzahl an Gegners
+    
+
     #endregion
 
     #region Getter / Setter
@@ -168,7 +171,7 @@ public class Wave : MonoBehaviour
             PlayerVision plyerVision = player.GetComponent<PlayerVision>();
             plyerVision.enabled = true;
         }
-
     }
+
     #endregion
 }

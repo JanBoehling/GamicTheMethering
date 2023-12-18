@@ -1067,7 +1067,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784e67945cc82a6469437c046fb55458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnObject: {fileID: 7935434590671151751, guid: 9c83ed1f889bb5742a8236039cc46eb4,
+  levelSettings: {fileID: 11400000, guid: 7727600fe28c13841acdd1ad7c6b409d, type: 2}
+  SpawnObject: {fileID: 5814974650610120787, guid: aadef59e76a06ad4dbc5e87759512f37,
     type: 3}
   SpawnArea: {fileID: 0}
   spawnheight: 1
@@ -1522,6 +1523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784e67945cc82a6469437c046fb55458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelSettings: {fileID: 11400000, guid: 7727600fe28c13841acdd1ad7c6b409d, type: 2}
   SpawnObject: {fileID: 8310492840487440380, guid: 76fdb8a0f0a70114595a5f23d955a76f,
     type: 3}
   SpawnArea: {fileID: 0}
@@ -4751,6 +4753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784e67945cc82a6469437c046fb55458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelSettings: {fileID: 11400000, guid: 7727600fe28c13841acdd1ad7c6b409d, type: 2}
   SpawnObject: {fileID: 8491098493589100232, guid: 28c0ae87ccc47504e8535b708e902f92,
     type: 3}
   SpawnArea: {fileID: 0}
@@ -6174,6 +6177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784e67945cc82a6469437c046fb55458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelSettings: {fileID: 11400000, guid: 7727600fe28c13841acdd1ad7c6b409d, type: 2}
   SpawnObject: {fileID: 591463232803692410, guid: fe43ec78f54da2e43989ddcb86142161,
     type: 3}
   SpawnArea: {fileID: 0}
@@ -11575,7 +11579,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784e67945cc82a6469437c046fb55458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnObject: {fileID: 7935434590671151751, guid: 9c83ed1f889bb5742a8236039cc46eb4,
+  levelSettings: {fileID: 11400000, guid: 7727600fe28c13841acdd1ad7c6b409d, type: 2}
+  SpawnObject: {fileID: 5814974650610120787, guid: aadef59e76a06ad4dbc5e87759512f37,
     type: 3}
   SpawnArea: {fileID: 0}
   spawnheight: 1
@@ -12650,6 +12655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784e67945cc82a6469437c046fb55458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelSettings: {fileID: 11400000, guid: 7727600fe28c13841acdd1ad7c6b409d, type: 2}
   SpawnObject: {fileID: 5814974650610120787, guid: aadef59e76a06ad4dbc5e87759512f37,
     type: 3}
   SpawnArea: {fileID: 0}
@@ -13982,7 +13988,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2109221046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14003,6 +14009,7 @@ MonoBehaviour:
   boss1: {fileID: 1772955720}
   boss2: {fileID: 126341531}
   boss3: {fileID: 1946253940}
+  GeneratedEnemies: 0
 --- !u!114 &2109221047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14016,6 +14023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelSettings: {fileID: 11400000, guid: 7727600fe28c13841acdd1ad7c6b409d, type: 2}
+  waveNumber: 0
 --- !u!4 &2109221048
 Transform:
   m_ObjectHideFlags: 0

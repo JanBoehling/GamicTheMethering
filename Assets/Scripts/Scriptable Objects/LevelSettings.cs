@@ -35,6 +35,10 @@ public class LevelSettings : ScriptableObject
     [SerializeField, Range(0, 100)] private int enemy2PercentageD3 = 40;
     [SerializeField, Range(0, 100)] private int enemy3PercentageD3 = 10;
 
+    [Header("During the game")]
+    [SerializeField, Tooltip("Anzahl der derzeit lebenden Gegner")]
+    public int LivingEnemies; 
+
     #region Getter / Setter
     public int StartWave { get { return startWave; } }
     public float EnemyWavesMultiplier { get { return enemyWavesMultiplier; } }

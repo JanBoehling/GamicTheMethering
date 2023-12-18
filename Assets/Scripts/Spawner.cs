@@ -7,13 +7,15 @@ using UnityEngine.AI;
 public class Spawner : MonoBehaviour
 {
     #region Variablen
+    [Header("Connections")] 
+    [SerializeField] private LevelSettings levelSettings;                       // Verknüpfung zu den Level Einstellungen
+
     [Header("Objects")]
     [SerializeField] public GameObject SpawnObject;                             // Objekt, das erzeugt werden soll.
     [SerializeField] public BoxCollider SpawnArea;                              // SpawnArea
 
     [Header("Values")]
     [SerializeField] float spawnheight;                                         // Feste Höhe, auf der das Objekt erzeugt werden soll.
-    /*[SerializeField, Range(1, 100)]*/ int amountOfSpawns = 1;                 // Anzahl an Objekte, die erzeugt werden sollen.
     [SerializeField, Range(1, 100)] int maxTries = 10;                          // Maximale Anzahl an Versuchen, eine gültige Spawn-Position zu finden.
     [SerializeField, Range(0.01f, 2)] float minDistanceToPlayer = 0.5f;         // Minimalste Entfernung zum Spieler.
     [SerializeField, Range(0.01f, 2)] float minDistanceToOtherObjects = 0.5f;   // Minimalste Entfernung zu anderen Objekten.                                                   
@@ -153,11 +155,15 @@ public class Spawner : MonoBehaviour
         // Objekt an zufälligen Position erzeugen.
         lastObject = Instantiate(spawnObject, spawnPosition, Quaternion.identity);
 
+        // Erhöht die Anzahl an lebenden Monster um 1
+        levelSettings.LivingEnemies++; 
+
         // Rotiert das Objekt in eine zufällige Richtung.
         if (rotateObjects)
         {
             lastObject.transform.rotation = Quaternion.Euler(0, UnityEngine.Random.Range(0, 360), 0);
         }
+
     }
 
     /// <summary>
